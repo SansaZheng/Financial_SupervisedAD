@@ -1,0 +1,17 @@
+cloudpickle==3.1.2
+-e git+ssh://git@github.com/SansaZheng/Financial_SupervisedAD.git@d3b1dee9e7dcad61ed2f60bf36f5998539bb2bc7#egg=financial_supervised_ad
+iniconfig==2.3.1
+joblib==1.5.2
+numpy==2.2.6
+packaging==26.3
+pandas==2.3.3
+pluggy==1.7.0
+Pygments==2.21.0
+pytest==8.4.2
+python-dateutil==4.0.0
+pytz==2026.6
+scikit-learn==1.7.2
+scipy==1.16.3
+threadpoolctl==3.6.0
+tzdata==2026.6
+xgboost==3.1.1

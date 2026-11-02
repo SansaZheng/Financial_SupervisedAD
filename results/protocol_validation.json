@@ -1,0 +1,8 @@
+{
+  "pytest_passed": 7,
+  "pytest_seconds": 7.4,
+  "command": "python -m pytest -q",
+  "pip_check": "No broken requirements found",
+  "platform": "macOS ARM64, Python 3.12.14",
+  "openmp": "sklearn wheel bundled libomp via DYLD_LIBRARY_PATH"
+}

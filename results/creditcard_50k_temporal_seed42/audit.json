@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "methods": [
+    "logistic_regression",
+    "gaussian_nb",
+    "knn",
+    "svm_rbf",
+    "decision_tree",
+    "random_forest",
+    "adaboost",
+    "gradient_boosting",
+    "xgboost",
+    "mlp"
+  ],
+  "checks": [
+    "metrics from held-out scores",
+    "validation-only threshold optimum/constraint",
+    "prediction threshold",
+    "disjoint validation/test",
+    "split manifest"
+  ]
+}

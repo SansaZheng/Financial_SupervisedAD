@@ -1,0 +1,6 @@
+{
+  "completed": 10,
+  "elapsed_seconds": 4.875870624789968,
+  "best_test_ap_descriptive_only": "mlp",
+  "note": "Test ranking is descriptive, not a model-selection procedure."
+}

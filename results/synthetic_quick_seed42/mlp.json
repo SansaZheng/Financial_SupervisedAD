@@ -1,0 +1,164 @@
+{
+  "method": "mlp",
+  "average_precision": 0.9105358644696706,
+  "pr_auc_trapezoid": 0.909775922647998,
+  "roc_auc": 0.9925429553264604,
+  "precision": 1.0,
+  "recall": 0.6333333333333333,
+  "f1": 0.7755102040816326,
+  "mcc": 0.7913480500535017,
+  "fpr": 0.0,
+  "alert_rate": 0.019,
+  "tn": 970,
+  "fp": 0,
+  "fn": 11,
+  "tp": 19,
+  "positive_rate": 0.03,
+  "threshold": 0.9499340415685933,
+  "validation_f1": 0.7924528301886793,
+  "validation_fpr": 0.0010319917440660474,
+  "fit_seconds": 1.0167005411349237,
+  "score_seconds": 0.038714957889169455,
+  "class_weighted": false,
+  "warnings": [
+    "Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet."
+  ],
+  "parameters": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocessing",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['feature_0', 'feature_1', 'feature_2',\n                                  'feature_3', 'feature_4', 'feature_5',\n                                  'feature_6', 'feature_7', 'feature_8',\n                                  'feature_9', 'feature_10', 'feature_11',\n                                  'feature_12', 'feature_13', 'feature_14',\n                                  'feature_15', 'feature_16', 'feature_17',\n                                  'feature_18', 'feature_19']),\n                                ('categorical',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='most_frequent')),\n                                                 ('encode',\n                                                  OneHotEncoder(handle_unknown='ignore',\n                                                                sparse_output=False))]),\n                                 [])])"
+      ],
+      [
+        "model",
+        "MLPClassifier(batch_size=256, hidden_layer_sizes=(64, 32), max_iter=100,\n              random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocessing": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['feature_0', 'feature_1', 'feature_2',\n                                  'feature_3', 'feature_4', 'feature_5',\n                                  'feature_6', 'feature_7', 'feature_8',\n                                  'feature_9', 'feature_10', 'feature_11',\n                                  'feature_12', 'feature_13', 'feature_14',\n                                  'feature_15', 'feature_16', 'feature_17',\n                                  'feature_18', 'feature_19']),\n                                ('categorical',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='most_frequent')),\n                                                 ('encode',\n                                                  OneHotEncoder(handle_unknown='ignore',\n                                                                sparse_output=False))]),\n                                 [])])",
+    "model": "MLPClassifier(batch_size=256, hidden_layer_sizes=(64, 32), max_iter=100,\n              random_state=42)",
+    "preprocessing__force_int_remainder_cols": "deprecated",
+    "preprocessing__n_jobs": null,
+    "preprocessing__remainder": "drop",
+    "preprocessing__sparse_threshold": 0.3,
+    "preprocessing__transformer_weights": null,
+    "preprocessing__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+        [
+          "feature_0",
+          "feature_1",
+          "feature_2",
+          "feature_3",
+          "feature_4",
+          "feature_5",
+          "feature_6",
+          "feature_7",
+          "feature_8",
+          "feature_9",
+          "feature_10",
+          "feature_11",
+          "feature_12",
+          "feature_13",
+          "feature_14",
+          "feature_15",
+          "feature_16",
+          "feature_17",
+          "feature_18",
+          "feature_19"
+        ]
+      ],
+      [
+        "categorical",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True,\n                               strategy='most_frequent')),\n                ('encode',\n                 OneHotEncoder(handle_unknown='ignore', sparse_output=False))])",
+        []
+      ]
+    ],
+    "preprocessing__verbose": false,
+    "preprocessing__verbose_feature_names_out": true,
+    "preprocessing__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+    "preprocessing__categorical": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True,\n                               strategy='most_frequent')),\n                ('encode',\n                 OneHotEncoder(handle_unknown='ignore', sparse_output=False))])",
+    "preprocessing__numeric__memory": null,
+    "preprocessing__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocessing__numeric__transform_input": null,
+    "preprocessing__numeric__verbose": false,
+    "preprocessing__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocessing__numeric__scale": "StandardScaler()",
+    "preprocessing__numeric__impute__add_indicator": false,
+    "preprocessing__numeric__impute__copy": true,
+    "preprocessing__numeric__impute__fill_value": null,
+    "preprocessing__numeric__impute__keep_empty_features": true,
+    "preprocessing__numeric__impute__missing_values": "nan",
+    "preprocessing__numeric__impute__strategy": "median",
+    "preprocessing__numeric__scale__copy": true,
+    "preprocessing__numeric__scale__with_mean": true,
+    "preprocessing__numeric__scale__with_std": true,
+    "preprocessing__categorical__memory": null,
+    "preprocessing__categorical__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='most_frequent')"
+      ],
+      [
+        "encode",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)"
+      ]
+    ],
+    "preprocessing__categorical__transform_input": null,
+    "preprocessing__categorical__verbose": false,
+    "preprocessing__categorical__impute": "SimpleImputer(keep_empty_features=True, strategy='most_frequent')",
+    "preprocessing__categorical__encode": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocessing__categorical__impute__add_indicator": false,
+    "preprocessing__categorical__impute__copy": true,
+    "preprocessing__categorical__impute__fill_value": null,
+    "preprocessing__categorical__impute__keep_empty_features": true,
+    "preprocessing__categorical__impute__missing_values": "nan",
+    "preprocessing__categorical__impute__strategy": "most_frequent",
+    "preprocessing__categorical__encode__categories": "auto",
+    "preprocessing__categorical__encode__drop": null,
+    "preprocessing__categorical__encode__dtype": "<class 'numpy.float64'>",
+    "preprocessing__categorical__encode__feature_name_combiner": "concat",
+    "preprocessing__categorical__encode__handle_unknown": "ignore",
+    "preprocessing__categorical__encode__max_categories": null,
+    "preprocessing__categorical__encode__min_frequency": null,
+    "preprocessing__categorical__encode__sparse_output": false,
+    "model__activation": "relu",
+    "model__alpha": 0.0001,
+    "model__batch_size": 256,
+    "model__beta_1": 0.9,
+    "model__beta_2": 0.999,
+    "model__early_stopping": false,
+    "model__epsilon": 1e-08,
+    "model__hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "model__learning_rate": "constant",
+    "model__learning_rate_init": 0.001,
+    "model__max_fun": 15000,
+    "model__max_iter": 100,
+    "model__momentum": 0.9,
+    "model__n_iter_no_change": 10,
+    "model__nesterovs_momentum": true,
+    "model__power_t": 0.5,
+    "model__random_state": 42,
+    "model__shuffle": true,
+    "model__solver": "adam",
+    "model__tol": 0.0001,
+    "model__validation_fraction": 0.1,
+    "model__verbose": false,
+    "model__warm_start": false
+  }
+}

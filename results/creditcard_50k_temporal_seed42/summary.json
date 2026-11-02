@@ -1,0 +1,31 @@
+{
+  "completed": 10,
+  "source_commit": "d3b1dee9e7dcad61ed2f60bf36f5998539bb2bc7",
+  "split_manifests_identical": true,
+  "configuration_identical_except_selected_methods": true,
+  "execution_segments": [
+    {
+      "methods": [
+        "logistic_regression",
+        "gaussian_nb",
+        "knn",
+        "svm_rbf",
+        "decision_tree",
+        "random_forest",
+        "adaboost",
+        "gradient_boosting"
+      ],
+      "note": "Initial run completed eight methods, then XGBoost OpenMP import failed."
+    },
+    {
+      "methods": [
+        "xgboost",
+        "mlp"
+      ],
+      "note": "Remaining two methods executed after setting DYLD_LIBRARY_PATH to the installed sklearn .dylibs directory."
+    }
+  ],
+  "total_model_fit_and_score_seconds": 133.78066491521895,
+  "best_test_ap_descriptive_only": "svm_rbf",
+  "note": "All methods use the same source commit, input, feature schema, split, seed, and fixed parameters. No metrics or thresholds were manually altered."
+}

@@ -1,0 +1,79 @@
+{
+  "label": "Class",
+  "time_column": "Time",
+  "split": "stratified",
+  "seed": 42,
+  "balance": "none",
+  "threshold_objective": "f1",
+  "max_fpr": 0.01,
+  "quick": true,
+  "methods": [
+    "logistic_regression",
+    "gaussian_nb",
+    "knn",
+    "svm_rbf",
+    "decision_tree",
+    "random_forest",
+    "adaboost",
+    "gradient_boosting",
+    "xgboost",
+    "mlp"
+  ],
+  "n_jobs": 2,
+  "drop_columns": [],
+  "features": [
+    "feature_0",
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5",
+    "feature_6",
+    "feature_7",
+    "feature_8",
+    "feature_9",
+    "feature_10",
+    "feature_11",
+    "feature_12",
+    "feature_13",
+    "feature_14",
+    "feature_15",
+    "feature_16",
+    "feature_17",
+    "feature_18",
+    "feature_19"
+  ],
+  "raw_rows": 5000,
+  "deduplicated_rows": 5000,
+  "frame_hash": "c0b1d0f86390daddb0537072655a4a641ede4868781224a1a2f72556c11f1afc",
+  "git_commit": "d3b1dee9e7dcad61ed2f60bf36f5998539bb2bc7",
+  "python": "3.12.14",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.1.1",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "splits": {
+    "train": {
+      "rows": 3000,
+      "positives": 92
+    },
+    "validation": {
+      "rows": 1000,
+      "positives": 31
+    },
+    "test": {
+      "rows": 1000,
+      "positives": 30
+    }
+  },
+  "provenance": {
+    "kind": "synthetic_smoke_only",
+    "generator": "sklearn.make_classification"
+  }
+}

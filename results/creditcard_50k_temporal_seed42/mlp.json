@@ -1,0 +1,171 @@
+{
+  "method": "mlp",
+  "average_precision": 0.7686117411675445,
+  "pr_auc_trapezoid": 0.7676173178799517,
+  "roc_auc": 0.9445391161008643,
+  "precision": 0.8666666666666667,
+  "recall": 0.7222222222222222,
+  "f1": 0.7878787878787878,
+  "mcc": 0.7908162902994731,
+  "fpr": 0.00020048115477145148,
+  "alert_rate": 0.0015009005403241946,
+  "tn": 9974,
+  "fp": 2,
+  "fn": 5,
+  "tp": 13,
+  "positive_rate": 0.0018010806483890335,
+  "threshold": 0.16857798503602564,
+  "validation_f1": 0.8181818181818182,
+  "validation_fpr": 0.00030057108506161706,
+  "fit_seconds": 5.534490708028898,
+  "score_seconds": 0.16206000000238419,
+  "class_weighted": false,
+  "warnings": [],
+  "parameters": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocessing",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7',\n                                  'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14',\n                                  'V15', 'V16', 'V17', 'V18', 'V19', 'V20',\n                                  'V21', 'V22', 'V23', 'V24', 'V25', 'V26',\n                                  'V27', 'V28', 'Amount']),\n                                ('categorical',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='most_frequent')),\n                                                 ('encode',\n                                                  OneHotEncoder(handle_unknown='ignore',\n                                                                sparse_output=False))]),\n                                 [])])"
+      ],
+      [
+        "model",
+        "MLPClassifier(batch_size=256, hidden_layer_sizes=(64, 32), max_iter=300,\n              random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocessing": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7',\n                                  'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14',\n                                  'V15', 'V16', 'V17', 'V18', 'V19', 'V20',\n                                  'V21', 'V22', 'V23', 'V24', 'V25', 'V26',\n                                  'V27', 'V28', 'Amount']),\n                                ('categorical',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='most_frequent')),\n                                                 ('encode',\n                                                  OneHotEncoder(handle_unknown='ignore',\n                                                                sparse_output=False))]),\n                                 [])])",
+    "model": "MLPClassifier(batch_size=256, hidden_layer_sizes=(64, 32), max_iter=300,\n              random_state=42)",
+    "preprocessing__force_int_remainder_cols": "deprecated",
+    "preprocessing__n_jobs": null,
+    "preprocessing__remainder": "drop",
+    "preprocessing__sparse_threshold": 0.3,
+    "preprocessing__transformer_weights": null,
+    "preprocessing__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+        [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "Amount"
+        ]
+      ],
+      [
+        "categorical",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True,\n                               strategy='most_frequent')),\n                ('encode',\n                 OneHotEncoder(handle_unknown='ignore', sparse_output=False))])",
+        []
+      ]
+    ],
+    "preprocessing__verbose": false,
+    "preprocessing__verbose_feature_names_out": true,
+    "preprocessing__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+    "preprocessing__categorical": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True,\n                               strategy='most_frequent')),\n                ('encode',\n                 OneHotEncoder(handle_unknown='ignore', sparse_output=False))])",
+    "preprocessing__numeric__memory": null,
+    "preprocessing__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocessing__numeric__transform_input": null,
+    "preprocessing__numeric__verbose": false,
+    "preprocessing__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocessing__numeric__scale": "StandardScaler()",
+    "preprocessing__numeric__impute__add_indicator": false,
+    "preprocessing__numeric__impute__copy": true,
+    "preprocessing__numeric__impute__fill_value": null,
+    "preprocessing__numeric__impute__keep_empty_features": true,
+    "preprocessing__numeric__impute__missing_values": "nan",
+    "preprocessing__numeric__impute__strategy": "median",
+    "preprocessing__numeric__scale__copy": true,
+    "preprocessing__numeric__scale__with_mean": true,
+    "preprocessing__numeric__scale__with_std": true,
+    "preprocessing__categorical__memory": null,
+    "preprocessing__categorical__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='most_frequent')"
+      ],
+      [
+        "encode",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)"
+      ]
+    ],
+    "preprocessing__categorical__transform_input": null,
+    "preprocessing__categorical__verbose": false,
+    "preprocessing__categorical__impute": "SimpleImputer(keep_empty_features=True, strategy='most_frequent')",
+    "preprocessing__categorical__encode": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocessing__categorical__impute__add_indicator": false,
+    "preprocessing__categorical__impute__copy": true,
+    "preprocessing__categorical__impute__fill_value": null,
+    "preprocessing__categorical__impute__keep_empty_features": true,
+    "preprocessing__categorical__impute__missing_values": "nan",
+    "preprocessing__categorical__impute__strategy": "most_frequent",
+    "preprocessing__categorical__encode__categories": "auto",
+    "preprocessing__categorical__encode__drop": null,
+    "preprocessing__categorical__encode__dtype": "<class 'numpy.float64'>",
+    "preprocessing__categorical__encode__feature_name_combiner": "concat",
+    "preprocessing__categorical__encode__handle_unknown": "ignore",
+    "preprocessing__categorical__encode__max_categories": null,
+    "preprocessing__categorical__encode__min_frequency": null,
+    "preprocessing__categorical__encode__sparse_output": false,
+    "model__activation": "relu",
+    "model__alpha": 0.0001,
+    "model__batch_size": 256,
+    "model__beta_1": 0.9,
+    "model__beta_2": 0.999,
+    "model__early_stopping": false,
+    "model__epsilon": 1e-08,
+    "model__hidden_layer_sizes": [
+      64,
+      32
+    ],
+    "model__learning_rate": "constant",
+    "model__learning_rate_init": 0.001,
+    "model__max_fun": 15000,
+    "model__max_iter": 300,
+    "model__momentum": 0.9,
+    "model__n_iter_no_change": 10,
+    "model__nesterovs_momentum": true,
+    "model__power_t": 0.5,
+    "model__random_state": 42,
+    "model__shuffle": true,
+    "model__solver": "adam",
+    "model__tol": 0.0001,
+    "model__validation_fraction": 0.1,
+    "model__verbose": false,
+    "model__warm_start": false
+  }
+}
