@@ -2,6 +2,8 @@
 import hashlib
 import importlib.metadata
 import json
+import math
+import os
 import platform
 import subprocess
 import time
@@ -32,7 +34,17 @@ def sha256_file(path):
 
 
 def write_json(path, obj):
-    Path(path).write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str,
+    # Estimator parameters legitimately include np.nan (e.g. imputer missing_values).
+    # Preserve these as named strings while keeping metric JSON strictly standard.
+    def sanitize(value):
+        if isinstance(value, dict):
+            return {str(key): sanitize(item) for key, item in value.items()}
+        if isinstance(value, (tuple, list)):
+            return [sanitize(item) for item in value]
+        if isinstance(value, (float, np.floating)) and not math.isfinite(value):
+            return str(value)
+        return value
+    Path(path).write_text(json.dumps(sanitize(obj), indent=2, ensure_ascii=False, default=str,
                                     allow_nan=False) + "\n", encoding="utf-8")
 
 
@@ -85,7 +97,8 @@ def run_experiment(frame, output, *, label="Class", time_column="Time", split="t
     frame_hash = hashlib.sha256(pd.util.hash_pandas_object(frame, index=True).values.tobytes()).hexdigest()
     try:
         git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], stderr=subprocess.DEVNULL,
-                                         timeout=3, text=True).strip()
+            timeout=3, text=True, env={**os.environ, "GIT_CONFIG_GLOBAL": "/dev/null",
+                                      "GIT_CONFIG_NOSYSTEM": "1"}).strip()
     except (subprocess.SubprocessError, OSError):
         git_sha = None
     info = dict(label=label, time_column=time_column, split=split, seed=seed, balance=balance,
