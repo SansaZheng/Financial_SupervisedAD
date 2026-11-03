@@ -11,9 +11,11 @@ dependencies = ["numpy>=1.24,<3", "pandas>=2,<3", "scikit-learn>=1.7,<1.8", "xgb
 
 [project.optional-dependencies]
 test = ["pytest>=8,<9"]
+recent2026 = ["torch==2.8.0", "interpret-core==0.7.8"]
 
 [project.scripts]
 financial-ad = "financial_supervised_ad.cli:main"
+financial-ad-2026 = "financial_supervised_ad.recent2026.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
