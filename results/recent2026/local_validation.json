@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "tests": 11,
+  "pytest_seconds": 12.21,
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "pip_check": "No broken requirements found",
+  "coverage": [
+    "classic methods regression",
+    "orthogonal-array pairwise balance",
+    "window endpoint isolation",
+    "independent InfoNCE formula and gradients",
+    "both 2026 methods training/export/audit",
+    "reloaded models reproduce exported scores"
+  ]
+}

@@ -6,6 +6,8 @@
 
 方法检索、原始文献、原理、参数及实验边界见 [方法说明](docs/METHODS.md)。实际执行结果见 [实验报告](docs/RESULTS.md)。
 
+新增 **2026 年方法扩展**：[STTN-CP 与 Optimized EBM](docs/METHODS_2026.md)。两者有独立的 `financial-ad-2026` 入口和可选依赖，保留原有 10 个经典方法的用法。
+
 ## 安装
 
 建议 Python 3.12。已在 macOS ARM64 / Python 3.12 验证；Linux CI 配置见工作流。

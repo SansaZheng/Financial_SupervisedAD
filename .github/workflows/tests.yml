@@ -12,3 +12,15 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip install --no-deps -e .
       - run: pytest -q
+  methods-2026:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements-2026.txt
+      - run: pip install --no-deps -e .
+      - run: pytest -q tests/test_recent2026.py

@@ -58,6 +58,15 @@ def test_both_2026_methods_train_export_and_audit(tmp_path):
         main(["--method", method, "--quick", "--n-samples", "1000", "--output", str(output), "--device", "cpu"])
         module.audit(output)
         assert (output / "inference.json").exists()
+        from financial_supervised_ad.data import synthetic_data
+        from financial_supervised_ad.recent2026.predict import predict
+        import pandas as pd
+        frame = synthetic_data(1000, 42)
+        frame["Time"] = np.arange(1000)
+        reloaded = predict(output, frame)
+        exported = pd.read_csv(output / f"{method}_predictions.csv.gz", float_precision="round_trip")
+        np.testing.assert_allclose(reloaded.loc[exported.row_id, "score"], exported.score,
+                                   atol=1e-6, rtol=1e-5)
         if method == "sttn_cp_2026":
             import torch
             from financial_supervised_ad.recent2026.sttn_architecture import STTNCP
