@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "upstream_commit": "e5d3657d826ca2e42d6b2489e0577afc45f773df",
+  "upstream_blob_sha": "d74f4c1b9f0824b5a8fbd26c2bdcf2f5bb886277",
+  "vendored_body_blob_sha": "d74f4c1b9f0824b5a8fbd26c2bdcf2f5bb886277",
+  "changes": "three attribution comments prepended; architecture body unchanged"
+}

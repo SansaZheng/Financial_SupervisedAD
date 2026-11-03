@@ -1,0 +1,73 @@
+{
+  "name": "FinancialAD 2026 sttn-formal seed42 on 50k real transactions",
+  "work": "Financial_SupervisedAD",
+  "code": {
+    "github": "SansaZheng/Financial_SupervisedAD",
+    "commit": "e761d4e376a550127c09292237509a20f9d6d10e"
+  },
+  "command": [
+    "bash",
+    "jobs/kaggle_2026.sh",
+    "sttn_cp_2026",
+    "--device",
+    "cuda"
+  ],
+  "env": {
+    "FINANCIAL_AD_COMMIT": "e761d4e376a550127c09292237509a20f9d6d10e",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "resources": {
+    "gpus": 1,
+    "gpu_mem_gb": 5,
+    "cpus": 4,
+    "ram_gb": 8
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "limits": {
+    "max_hours": 1.5,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "outputs": {
+    "dest": "/Users/sudingli/.local/share/cq/kaggle/financial-supervised-ad-2026/sttn-formal-e761d4e3",
+    "expect": [
+      {
+        "path": "run/audit.json",
+        "contains": "\"passed\": true"
+      },
+      {
+        "path": "run/metrics.csv",
+        "min_lines": 2
+      },
+      {
+        "path": "run/summary.json",
+        "contains": "\"completed\": 1"
+      },
+      {
+        "path": "run/inference.json",
+        "contains": "threshold"
+      },
+      {
+        "path": "run/best_model.pt",
+        "min_bytes": 1000
+      },
+      {
+        "path": "run/history.jsonl",
+        "min_lines": 2
+      }
+    ],
+    "progress": {
+      "path": "run/progress.txt",
+      "stall_min": 40
+    }
+  },
+  "depends_on": [
+    "j-1103-87b0ab"
+  ]
+}

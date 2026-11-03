@@ -38,6 +38,7 @@ Fazel、Bakhtiary、Bigdeli，2026-02-06：[论文 arXiv:2602.06955](https://arx
 - 沿用经典实验的 seed=42、ULB 标签无关 50k 均匀样本、去重及时间切分，数值预处理仅拟合训练集。
 - EBM 使用 29 个原始候选特征，再筛到 18；STTN-CP 使用全部 29 个候选特征。
 - STTN 每个集合独立建窗口，丢弃该集合最初 7 个无足够历史的端点，不填入未来数据或跨集合历史。它与逐笔经典方法的测试行数不同，原始指标不得直接当作完全同一测试样本的排名；比较时应按保存的 row_id 对齐。
+- 窗口是 50k 均匀样本内的相邻全局交易，不是完整原始交易流的连续 8 笔，也不能解释为同一账户的交易序列；ULB 没有可用的账户标识。
 - 最终阈值统一由验证集最大 F1 确定；逐笔分数可通过 `scripts/audit_results.py` 独立复核。任何训练过程都不以测试集指标选 checkpoint。
 - 只验证一个稀疏欺诈数据集、一个 seed；不能据此声称复现论文中的数值或普遍优于其他方法。
 
@@ -72,3 +73,5 @@ python -m financial_supervised_ad.recent2026.predict --model-dir runs/sttn_2026 
 STTN 预测需要 Time 列排序，每个独立输入文件最初 7 条输出 `eligible_endpoint=false` 且预测为空；其余行输出恢复到输入行顺序。EBM 预测不需要时间列。真实交易特征必须与训练时一致，目标标签不作为输入。
 
 除公共 metrics / predictions / splits / audit 外，STTN 输出 `best_model.pt`、`preprocessing.joblib`、`history.jsonl`；EBM 输出 `model.joblib`、`search_history.json`；两者均输出 `inference.json` 中的特征 schema 与阈值。
+
+GPU 烟雾测试权重在本机 CPU 上抽查 16 笔，冻结阈值下分类一致，分数最大差异约 `3.02e-6`；不宣称跨设备逐位相同。正式评估以保存的原始预测分数为准。[验证记录](../results/recent2026/qualification/cuda_to_cpu_checkpoint.json)

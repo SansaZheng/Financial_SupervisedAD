@@ -1,0 +1,27 @@
+{
+  "checked_rows": [
+    39974,
+    39975,
+    39976,
+    39977,
+    39978,
+    39979,
+    39980,
+    39981,
+    39982,
+    39983,
+    39984,
+    39985,
+    39986,
+    39987,
+    39988,
+    39989
+  ],
+  "source": "Kaggle CUDA checkpoint",
+  "reloaded_on": "local CPU",
+  "samples": 16,
+  "max_abs_score_difference": 3.0162170290941315e-06,
+  "predictions_equal_at_frozen_threshold": true,
+  "bitwise_score_identity": false,
+  "note": "Cross-device floating-point scores differ slightly; local same-device reload parity is checked separately. This is a 16-row diagnostic, not a full cross-device equivalence claim."
+}

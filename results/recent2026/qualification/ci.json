@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "commit": "764719ab",
+  "run": "https://github.com/SansaZheng/Financial_SupervisedAD/actions/runs/41626654526",
+  "jobs": [
+    "protocol",
+    "methods-2026"
+  ]
+}

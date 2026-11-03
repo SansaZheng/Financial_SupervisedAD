@@ -1,0 +1,52 @@
+{
+  "method": "sttn_cp_2026",
+  "average_precision": 0.06597549513064645,
+  "pr_auc_trapezoid": 0.06447864535519669,
+  "roc_auc": 0.7251646771658808,
+  "precision": 0.003982300884955752,
+  "recall": 0.5,
+  "f1": 0.007901668129938543,
+  "mcc": 0.027795203439257427,
+  "fpr": 0.2257999799378072,
+  "alert_rate": 0.2262941824371683,
+  "tn": 7718,
+  "fp": 2251,
+  "fn": 9,
+  "tp": 9,
+  "positive_rate": 0.0018023430459597476,
+  "threshold": 0.002978508360683918,
+  "elapsed_seconds": 62.05344612700003,
+  "training": {
+    "model_config": {
+      "input_dim": 29,
+      "seq_len": 8,
+      "embed_dim": 128,
+      "n_blocks": 3,
+      "n_heads": 4,
+      "mlp_dim": 256,
+      "proj_dim": 64
+    },
+    "trainable_parameters": 859330,
+    "batch_size": 128,
+    "max_epochs": 1,
+    "patience": 10,
+    "completed_epochs": 1,
+    "best_epoch": 1,
+    "best_validation_f1_at_0_5": 0.0,
+    "device": "cuda",
+    "class_weights": [
+      0.5010030425624394,
+      249.74166666666667
+    ],
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "scheduler": "CosineAnnealingLR",
+    "noise_std": 0.02,
+    "lambda_contrastive": 0.5,
+    "temperature": 0.07,
+    "elapsed_seconds": 56.38195474500003,
+    "deterministic_algorithms_warn_only": true,
+    "peak_gpu_allocated_bytes": 2171052544,
+    "peak_gpu_reserved_bytes": 2306867200
+  }
+}

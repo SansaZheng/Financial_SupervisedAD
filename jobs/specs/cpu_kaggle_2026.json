@@ -1,0 +1,47 @@
+{
+  "name": "FinancialAD 2026 portable CPU dependency/data/test gate",
+  "work": "Financial_SupervisedAD",
+  "code": {
+    "github": "SansaZheng/Financial_SupervisedAD",
+    "commit": "e761d4e376a550127c09292237509a20f9d6d10e"
+  },
+  "command": [
+    "bash",
+    "jobs/kaggle_2026.sh",
+    "cpu-check"
+  ],
+  "env": {
+    "FINANCIAL_AD_COMMIT": "e761d4e376a550127c09292237509a20f9d6d10e",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "resources": {
+    "gpus": 0,
+    "cpus": 4,
+    "ram_gb": 12
+  },
+  "placement": {
+    "target": "kaggle",
+    "allow_rent": false
+  },
+  "limits": {
+    "max_hours": 0.5,
+    "max_attempts": 1,
+    "max_usd": 0
+  },
+  "outputs": {
+    "dest": "/Users/sudingli/.local/share/cq/kaggle/financial-supervised-ad-2026/cpu-e761d4e3",
+    "expect": [
+      {
+        "path": "environment.json",
+        "contains": "\"ready\": true"
+      },
+      {
+        "path": "environment-freeze.txt",
+        "min_lines": 10
+      }
+    ]
+  }
+}

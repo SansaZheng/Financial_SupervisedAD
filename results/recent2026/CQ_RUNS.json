@@ -1,0 +1,12 @@
+{
+  "training_source_commit": "e761d4e376a550127c09292237509a20f9d6d10e",
+  "provider": "CQ-managed Kaggle",
+  "paid_rental": false,
+  "cpu_gate": "j-1103-1f7c5f",
+  "cuda_smoke": "j-1103-87b0ab",
+  "formal_jobs": {
+    "optimized_ebm_2026": "j-1103-e3c5d1",
+    "sttn_cp_2026": "j-1103-702223"
+  },
+  "dataset_frame_hash": "9afd18b0984435b1236162596a7edde748da86a47c20a547921b9062b2ef2480"
+}
