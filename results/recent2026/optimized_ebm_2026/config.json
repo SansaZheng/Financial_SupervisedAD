@@ -1,0 +1,75 @@
+{
+  "methods": [
+    "optimized_ebm_2026"
+  ],
+  "seed": 42,
+  "quick": false,
+  "n_jobs": 4,
+  "split": "temporal",
+  "time_column": "Time",
+  "label": "Class",
+  "threshold_objective": "f1",
+  "source_commit": "e761d4e376a550127c09292237509a20f9d6d10e",
+  "provenance": {
+    "kind": "user_csv",
+    "file": "creditcard_50k.csv.gz",
+    "sha256": "5b48ed39f34f0f8c3b6970889b54d555adedb903fa5024f851727feb882e2c45"
+  },
+  "features": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "frame_hash": "9afd18b0984435b1236162596a7edde748da86a47c20a547921b9062b2ef2480",
+  "python": "3.13.18",
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "torch": "2.8.0",
+    "interpret-core": "0.7.8"
+  },
+  "splits": {
+    "train": {
+      "rows": 29976,
+      "positives": 60,
+      "source_partition_rows": 29976
+    },
+    "validation": {
+      "rows": 9991,
+      "positives": 10,
+      "source_partition_rows": 9991
+    },
+    "test": {
+      "rows": 9994,
+      "positives": 18,
+      "source_partition_rows": 9994
+    }
+  }
+}

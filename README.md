@@ -6,7 +6,7 @@
 
 方法检索、原始文献、原理、参数及实验边界见 [方法说明](docs/METHODS.md)。实际执行结果见 [实验报告](docs/RESULTS.md)。
 
-新增 **2026 年方法扩展**：[STTN-CP 与 Optimized EBM](docs/METHODS_2026.md)。两者有独立的 `financial-ad-2026` 入口和可选依赖，保留原有 10 个经典方法的用法。
+新增 **2026 年方法扩展**：[STTN-CP 与 Optimized EBM](docs/METHODS_2026.md)，以及[正式实验结果与已训练权重](docs/RESULTS_2026.md)。两者均已在相同 ULB 50k 样本上完成正式训练、独立审计和共同交易端点比较，有独立的 `financial-ad-2026` 入口和可选依赖。
 
 ## 安装
 

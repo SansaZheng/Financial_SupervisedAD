@@ -17,6 +17,7 @@
     "validation-only threshold optimum/constraint",
     "prediction threshold",
     "disjoint validation/test",
-    "split manifest"
+    "split manifest",
+    "prediction endpoints and labels match manifest"
   ]
 }

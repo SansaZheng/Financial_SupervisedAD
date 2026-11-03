@@ -8,5 +8,23 @@
     "optimized_ebm_2026": "j-1103-e3c5d1",
     "sttn_cp_2026": "j-1103-702223"
   },
-  "dataset_frame_hash": "9afd18b0984435b1236162596a7edde748da86a47c20a547921b9062b2ef2480"
+  "dataset_frame_hash": "9afd18b0984435b1236162596a7edde748da86a47c20a547921b9062b2ef2480",
+  "verified_completed": {
+    "sttn_cp_2026": {
+      "job_id": "j-1103-702223",
+      "completed_epochs": 25,
+      "best_epoch": 15,
+      "cq_outputs_verified": true,
+      "full_archive_fetched": true
+    },
+    "optimized_ebm_2026": {
+      "job_id": "j-1103-e3c5d1",
+      "scaler_trials": 25,
+      "parameter_trials": 9,
+      "cv_folds": 3,
+      "total_model_fits": 104,
+      "cq_outputs_verified": true,
+      "full_archive_fetched": true
+    }
+  }
 }

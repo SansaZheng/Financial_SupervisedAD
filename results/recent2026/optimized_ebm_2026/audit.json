@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "methods": [
+    "optimized_ebm_2026"
+  ],
+  "checks": [
+    "metrics from held-out scores",
+    "validation-only threshold optimum/constraint",
+    "prediction threshold",
+    "disjoint validation/test",
+    "split manifest",
+    "prediction endpoints and labels match manifest"
+  ]
+}

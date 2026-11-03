@@ -1,0 +1,21 @@
+{
+  "frame_hash": "9afd18b0984435b1236162596a7edde748da86a47c20a547921b9062b2ef2480",
+  "rows": 9987,
+  "positives": 18,
+  "methods": [
+    "logistic_regression",
+    "gaussian_nb",
+    "knn",
+    "svm_rbf",
+    "decision_tree",
+    "random_forest",
+    "adaboost",
+    "gradient_boosting",
+    "xgboost",
+    "mlp",
+    "optimized_ebm_2026",
+    "sttn_cp_2026"
+  ],
+  "thresholds": "Frozen in each source run; no test tuning",
+  "passed": true
+}

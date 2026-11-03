@@ -1,7 +1,7 @@
 {
   "passed": true,
   "tests": 11,
-  "pytest_seconds": 12.21,
+  "pytest_seconds": 91.79,
   "platform": "macOS-26.2-arm64-arm-64bit",
   "python": "3.12.14",
   "pip_check": "No broken requirements found",
@@ -11,6 +11,7 @@
     "window endpoint isolation",
     "independent InfoNCE formula and gradients",
     "both 2026 methods training/export/audit",
-    "reloaded models reproduce exported scores"
+    "reloaded models reproduce exported scores",
+    "prediction endpoints and labels match the split manifest"
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "optimized_ebm_2026": {
+    "rows": [
+      40335,
+      40823,
+      41064,
+      41075,
+      41545,
+      43497,
+      43658,
+      43772,
+      48735,
+      46972,
+      40012,
+      43309,
+      46392,
+      49015,
+      39994,
+      44322
+    ],
+    "max_abs_score_difference": 0.0,
+    "predictions_equal": true,
+    "source_runtime": "CQ Kaggle Linux Python 3.13",
+    "reloaded_runtime": "local macOS CPU Python 3.12",
+    "scope": "16 held-out rows: 8 fraud and 8 highest-scoring normal transactions; diagnostic only"
+  },
+  "sttn_cp_2026": {
+    "rows": [
+      40335,
+      40823,
+      41064,
+      41075,
+      41545,
+      43497,
+      43658,
+      43772,
+      46972,
+      40012,
+      46392,
+      44479,
+      44696,
+      41194,
+      42764,
+      49236
+    ],
+    "max_abs_score_difference": 0.001936017413787794,
+    "predictions_equal": true,
+    "source_runtime": "CQ Kaggle Linux Python 3.13",
+    "reloaded_runtime": "local macOS CPU Python 3.12",
+    "scope": "16 held-out rows: 8 fraud and 8 highest-scoring normal transactions; diagnostic only"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "completed": 1,
+  "method": "optimized_ebm_2026",
+  "metrics": {
+    "method": "optimized_ebm_2026",
+    "average_precision": 0.758252255987531,
+    "pr_auc_trapezoid": 0.757062261720415,
+    "roc_auc": 0.9499131248329323,
+    "precision": 0.9166666666666666,
+    "recall": 0.6111111111111112,
+    "f1": 0.7333333333333333,
+    "mcc": 0.7481074916867938,
+    "fpr": 0.00010024057738572574,
+    "alert_rate": 0.0012007204322593557,
+    "tn": 9975,
+    "fp": 1,
+    "fn": 7,
+    "tp": 11,
+    "positive_rate": 0.0018010806483890335,
+    "threshold": 0.25865795651954837,
+    "elapsed_seconds": 1851.3287822999998
+  }
+}

@@ -13,10 +13,20 @@ def audit(directory):
     directory = Path(directory)
     config = json.loads((directory / "config.json").read_text())
     results = pd.read_csv(directory / "metrics.csv", float_precision="round_trip")
+    splits = pd.read_csv(directory / "splits.csv")
+    assert splits.row_id.is_unique
     assert len(results) == len(config["methods"])
     for row in results.to_dict("records"):
         saved = pd.read_csv(directory / f"{row['method']}_predictions.csv.gz", float_precision="round_trip")
         val, test = (saved[saved.split == name] for name in ("validation", "test"))
+        for name, group in (("validation", val), ("test", test)):
+            expected_rows = splits[splits.split == name]
+            if "eligible_endpoint" in expected_rows:
+                expected_rows = expected_rows[expected_rows.eligible_endpoint]
+            assert group.row_id.is_unique
+            actual_labels = group.set_index("row_id").label.sort_index()
+            expected_labels = expected_rows.set_index("row_id").label.sort_index()
+            pd.testing.assert_series_equal(actual_labels, expected_labels)
         assert set(val.row_id).isdisjoint(test.row_id)
         assert len(test) == config["splits"]["test"]["rows"]
         pred = (test.score.to_numpy() >= row["threshold"]).astype(int)
@@ -43,8 +53,6 @@ def audit(directory):
             vp = val.score.to_numpy() >= row["threshold"]
             actual_fpr = vp[val.label.to_numpy() == 0].mean()
             assert actual_fpr <= config["max_fpr"] + 1e-12
-    splits = pd.read_csv(directory / "splits.csv")
-    assert splits.row_id.is_unique
     if config["split"] == "temporal":
         times = splits[config["time_column"]]
         if not pd.api.types.is_numeric_dtype(times):
@@ -53,7 +61,8 @@ def audit(directory):
         assert times[splits.split == "validation"].max() < times[splits.split == "test"].min()
     report = {"passed": True, "methods": results.method.tolist(),
               "checks": ["metrics from held-out scores", "validation-only threshold optimum/constraint",
-                         "prediction threshold", "disjoint validation/test", "split manifest"]}
+                         "prediction threshold", "disjoint validation/test", "split manifest",
+                         "prediction endpoints and labels match manifest"]}
     (directory / "audit.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps(report, indent=2))
 
