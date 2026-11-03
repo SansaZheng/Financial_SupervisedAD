@@ -44,8 +44,14 @@ def run(args):
         raise ValueError("The 2026 ULB reproductions accept numeric features only")
     X, y = features.to_numpy(dtype=float), frame.Class.to_numpy(dtype=np.int64)
     out.mkdir(parents=True, exist_ok=True)
-    source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True,
-        env={**os.environ, "GIT_CONFIG_GLOBAL": "/dev/null", "GIT_CONFIG_NOSYSTEM": "1"}).strip()
+    source_commit = os.environ.get("FINANCIAL_AD_COMMIT")
+    if source_commit is None:
+        try:
+            source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True,
+                stderr=subprocess.DEVNULL, timeout=3,
+                env={**os.environ, "GIT_CONFIG_GLOBAL": "/dev/null", "GIT_CONFIG_NOSYSTEM": "1"}).strip()
+        except (OSError, subprocess.SubprocessError):
+            source_commit = None
     cfg = dict(methods=[args.method], seed=args.seed, quick=args.quick, n_jobs=args.n_jobs,
         split=split, time_column="Time", label="Class", threshold_objective="f1",
         source_commit=source_commit, provenance=source, features=list(features),
